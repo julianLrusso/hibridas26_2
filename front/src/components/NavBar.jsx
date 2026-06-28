@@ -20,8 +20,8 @@ const NavBar = () => {
                             <Link className="nav-link" to="/register">Registro</Link>
                         </Activity>
                         <Activity mode={email ? "visible" : "hidden"}>
-                            <Link className="nav-link" to="/categorias">Categorias</Link>
-                            <Link className="nav-link" to="/plataformas">Plataformas</Link>
+                            {rol >= 1 && <Link className="nav-link" to="/categorias">Categorias</Link>}
+                            {rol >= 1 && <Link className="nav-link" to="/plataformas">Plataformas</Link>}
                             {rol >= 2 && <Link className="nav-link" to="/usuarios">Usuarios</Link>}
                             <Link className="nav-link" to="/logout">Salir</Link>
                         </Activity>

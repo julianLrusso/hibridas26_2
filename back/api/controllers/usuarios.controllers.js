@@ -21,8 +21,8 @@ export function getUsuarios(req, res){
 export function asignarRol(req, res){
     const idUsuario = req.params.idUsuario
     const rol = req.body.rol
-    if( !idUsuario ) res.status(404).json({ message: "El id es obligatorio" })
+    if (!idUsuario) return res.status(404).json({ message: "El id es obligatorio" })
     services.asignarRol(idUsuario, rol)
-        .then( data => res.status(202).json(data) )
-        .catch( err => res.status(500).json({ message: "No se puso asignar el rol" }) )
+        .then(() => res.status(202).json({ message: "Rol actualizado" }))
+        .catch(err => res.status(500).json({ message: "No se pudo asignar el rol" }))
 }
