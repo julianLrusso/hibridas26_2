@@ -14,7 +14,7 @@ const Plataformas = () => {
     const fetchPlataformas = () => {
         getPlataformas()
             .then(data => setPlataformas(data))
-            .catch(err => console.log(err))
+            .catch(() => toast.error("Error al cargar plataformas"))
     }
 
     useEffect(() => {

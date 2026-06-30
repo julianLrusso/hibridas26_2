@@ -11,8 +11,6 @@ const Home = () => {
   return (
     <div className='container-fluid'>
       {rol >= 1 && <Link to="/nuevo-videojuego" className='btn btn-primary my-2'>Nuevo videojuego</Link>}
-      {rol >= 1 && <Link to="/categorias" className='btn btn-secondary my-2 ms-2'>Categorias</Link>}
-      {rol >= 1 && <Link to="/plataformas" className='btn btn-secondary my-2 ms-2'>Plataformas</Link>}
       <table className='table mt-3'>
         <thead>
           <tr>
@@ -29,7 +27,7 @@ const Home = () => {
               <tr key={videojuego._id}>
                 <td>{
                   videojuego?.portada
-                    ? <img width="100px" src={`http://localhost:2026/portadas/${videojuego.portada}`} alt="" />
+                    ? <img width="100px" src={`http://localhost:2026/portadas/${videojuego.portada}`} alt={`Portada de ${videojuego.titulo}`} />
                     : "Sin portada"
                 }</td>
                 <td>{videojuego.titulo}</td>

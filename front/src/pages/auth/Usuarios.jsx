@@ -14,7 +14,7 @@ const Usuarios = () => {
   const cargarUsuarios = () => {
     usuarios()
       .then((users) => setUsers(users))
-      .catch(err => console.log(err))
+      .catch(() => toast.error("Error al cargar usuarios"))
   }
 
   useEffect(() => {

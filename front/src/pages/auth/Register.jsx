@@ -10,8 +10,8 @@ const Register = () => {
   const [showPassConfirm, setShowPassConfirm] = useState(false)
 
   const {
-    register,         //Se conecta con los values de los inputs
-    handleSubmit,     //Valida antes de enviar
+    register,
+    handleSubmit,
     watch,
     formState: { errors, isValid }
   } = useForm()
@@ -43,8 +43,6 @@ const Register = () => {
   const isValidPassConfirm = Object.values(validacionConfirm).every(value => value == true)
 
   const onSubmit = async (formData) => {
-    console.log(formData)
-
     registroService(formData.email, formData.pass, formData.passConfirm)
       .then(data => {
         navigate("/login")

@@ -8,7 +8,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js",
     "dev": "nodemon --ignore data/* main.js",
-    "ajax": "nodemon ajax.js",
     "swagger": "node swagger.js",
     "seed": "node seed.js"
   },

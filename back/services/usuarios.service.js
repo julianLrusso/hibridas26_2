@@ -14,7 +14,7 @@ export async function createUser(usuario) {
     await client.connect()
 
     const existe = await db.collection("usuarios").findOne({ email: usuario.email })
-    if (existe) throw new Error("No se pudo registrar")
+    if (existe) throw new Error("No se pudo registrar.")
 
     usuario.password = await bcrypt.hash(usuario.password, 11)
 
@@ -27,15 +27,13 @@ export async function login(usuario) {
     await client.connect()
     const existe = await db.collection("usuarios").findOne({ email: usuario.email })
 
-    if (!existe) throw new Error("No se pudo ingresar")
+    if (!existe) throw new Error("No se pudo ingresar.")
 
     const esValido = await bcrypt.compare(usuario.password, existe.password)
 
-    if (!esValido) throw new Error("No se pudo ingresar")
+    if (!esValido) throw new Error("No se pudo ingresar.")
 
     if (!existe?.rol) existe.rol = USER
-
-    console.log(existe)
 
     const token = createToken(existe)
 

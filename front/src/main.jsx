@@ -5,6 +5,7 @@ import router from './routes/Router';
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min.js"
 import "react-toastify/ReactToastify.css"
+import "./styles/global.css"
 
 import { SessionProvider } from './contexts/Session.context';
 

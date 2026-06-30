@@ -14,7 +14,7 @@ const Categorias = () => {
     const fetchCategorias = () => {
         getCategorias()
             .then(data => setCategorias(data))
-            .catch(err => console.log(err))
+            .catch(() => toast.error("Error al cargar categorias"))
     }
 
     useEffect(() => {

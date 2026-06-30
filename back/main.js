@@ -1,5 +1,4 @@
 import express from "express"
-import VideojuegosRoutes from "./routes/videojuegos.routes.js"
 import VideojuegosRoutesApi from "./api/routes/videojuegos.routes.js"
 import CategoriasRoutesApi from "./api/routes/categorias.routes.js"
 import PlataformasRoutesApi from "./api/routes/plataformas.routes.js"
@@ -22,7 +21,6 @@ app.use(cors());
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
-app.use(VideojuegosRoutes);
 app.use("/", VideojuegosRoutesApi);
 app.use("/", CategoriasRoutesApi);
 app.use("/", PlataformasRoutesApi);
@@ -38,11 +36,9 @@ const io = new Server(server, {
 })
 
 io.on("connection", (socket) => {
-    console.log("Cliente conectado: " + socket.id)
-
     socket.on("nuevo-videojuego", () => {
         socket.broadcast.emit("nuevo-videojuego")
     })
 })
 
-server.listen(2026, () => console.log("Servidor funcionando en http://localhost:2026"))
+server.listen(2026)

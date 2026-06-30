@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import { toast } from "react-toastify"
 import { useVideojuegosService } from "../../services/videojuegos.service"
 
 const DeleteVideojuego = () => {
@@ -12,13 +13,13 @@ const DeleteVideojuego = () => {
         e.preventDefault()
         deleteVideojuego(idVideojuego)
             .then(() => navigate("/"))
-            .catch((err) => console.log(err))
+            .catch(() => toast.error("Error al eliminar"))
     }
 
     useEffect(() => {
         getVideojuegoById(idVideojuego)
             .then(data => setVideojuego(data.data))
-            .catch(err => console.log(err))
+            .catch(() => toast.error("Error al cargar videojuego"))
     }, [])
 
     return (

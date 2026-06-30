@@ -26,7 +26,7 @@ const Detalle = () => {
             <div className="row g-0">
                 <div className="col-md-4">
                     {videojuego?.portada
-                        ? <img width="100%" src={`http://localhost:2026/portadas/${videojuego.portada}`} alt="" />
+                        ? <img width="100%" src={`http://localhost:2026/portadas/${videojuego.portada}`} alt={`Portada de ${videojuego.titulo}`} />
                         : "Sin portada"}
                 </div>
                 <div className="col-md-8">

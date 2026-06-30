@@ -62,8 +62,6 @@ cd back
 pnpm run dev
 ```
 
-Documentación Swagger disponible en `http://localhost:2026/api-docs`
-
 ### Frontend (puerto 5173)
 
 ```bash
