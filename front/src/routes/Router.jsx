@@ -12,6 +12,7 @@ import DeleteVideojuego from "../pages/crud/DeleteVideojuego";
 import Categorias from "../pages/crud/Categorias";
 import Plataformas from "../pages/crud/Plataformas";
 import Usuarios from "../pages/auth/usuarios";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        element: <div>404</div>
+        element: <NotFound />
       }
     ]
   }
